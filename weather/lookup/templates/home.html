@@ -1,3 +1,21 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+
+{% block content %}
+
 <h1>Hello World!!! Django</h1>
+<hr />
+
+{% if api %}
+    {% if api == "Error" %}
+        Error Occurred, please try again!!!
+    {% else %}
+        Air quality: {{ api.0.AQI }}
+        <hr />
+        Reporting Area: {{ api.0.ReportingArea }}
+        <hr />
+        Category: {{ api.0.Category.Name }}
+    {% endif %}
+
+{% endif %}
+
 {% endblock %}

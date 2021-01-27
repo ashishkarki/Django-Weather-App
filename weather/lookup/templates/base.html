@@ -15,14 +15,6 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <style>
-      .nav-wrapper {
-        /* background-color: #cfd8dc !important;
-        font-size: 14px;
-        font-weight: bold; */
-      }
-    </style>
   </head>
 
   <body>
@@ -31,10 +23,10 @@
       <div class="nav-wrapper">
         <ul id="nav-mobile" class="hide-on-med-and-down">
           <li>
-            <a href="/" class="brand-logo">Weather Lookup</a>
+            <a href="{% url 'home' %}" class="brand-logo">Weather Lookup</a>
           </li>
           <li class="right">
-            <a href="/about.html" class="white-text">About Me</a>
+            <a href="{% url 'about' %}" class="white-text">About Me</a>
           </li>
           <li class="right">
             <div class="row">
