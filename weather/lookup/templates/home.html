@@ -8,7 +8,7 @@
     {% else %}
         <div class="row">
             <div class="col s12 m6" style="width: 100%;">
-                <div class="card blue-grey darken-1 {{ category_color}}">
+                <div class="card {{ category_color }}">
                     <div class="card-content white-text">
                         <span class="card-title">
                             Category: {{ api.0.Category.Name }}
@@ -19,37 +19,7 @@
 
                         <hr>
                         <p>
-                            {% if api.0.Category.Name == "Good" %}
-                                <p>
-                                    (0 to 50) Air quality is satisfactory, and air pollution poses little or no risk.
-                                </p>
-
-                            {% elif api.0.Category.Name == "Moderate" %}
-                                <p>
-                                    (51 to 100) Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution.
-                                </p>
-
-                            {% elif api.0.Category.Name == "Unhealthy for Sensitive Groups" %}
-                                <p>
-                                    (101 to 150) Members of sensitive groups may experience health effects. The general public is less likely to be affected.
-                                </p>
-
-                            {% elif api.0.Category.Name == "Unhealthy" %}
-                                <p>
-                                    (151 to 200) Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.
-                                </p>
-
-                            {% elif api.0.Category.Name == "Very Unhealthy" %}
-                                <p>
-                                    (201 to 300) Health alert: The risk of health effects is increased for everyone.
-                                </p>
-
-                            {% elif api.0.Category.Name == "Hazardous" %}
-                                <p>
-                                    (301 and higher) Health warning of emergency conditions: everyone is more likely to be affected.
-                                </p>
-
-                            {% endif %}
+                            {{ category_description }}
                         </p>
                     </div>
                 </div>
