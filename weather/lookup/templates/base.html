@@ -57,18 +57,22 @@
           <li class="right">
             <a href="{% url 'about' %}" class="white-text">About Me</a>
           </li>
-          <li class="right" style="width: 30%">
+          <li class="right">
             <form action="{% url 'home' %}" class="my-2 mg-lg-0" method="POST">
               {% csrf_token %}
               <div class="form-row">
                 <input
                   type="search"
                   class="form-control col-sm-7 mx-1"
-                  placeholder="Enter zip and click Lookup"
+                  placeholder="Enter zip & Lookup"
                   aria-label="search"
+                  name="zipcode"
                 />
 
-                <button type="submit" class="btn btn-info my-2 col-sm-3">
+                <button
+                  type="submit"
+                  class="btn btn-info my-2 col-sm-3 col-sm-4 ml-auto"
+                >
                   Lookup
                 </button>
               </div>
