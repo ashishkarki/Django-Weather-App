@@ -2,32 +2,31 @@
 
 {% block content %}
 
+{% if zipCode %}
+    {{ zipCode }}
+{%endif %}
+
 {% if api %}
     {% if api == "Error" %}
         Error Occurred, please try again!!!
     {% else %}
         <div class="row">
-            <div class="col s12 m6" style="width: 100%;">
-                <div class="card {{ category_color }}">
-                    <div class="card-content white-text">
-                        <span class="card-title">
-                            Category: {{ api.0.Category.Name }}
-                        </span>
-                        <p>
-                            <span>{{ api.0.ReportingArea }} </span> Air Quality: {{ api.0.AQI }}
-                        </p>
+        <div class="col s12 m6" style="width: 100%">
+            <div class="card {{ category_color }}">
+            <div class="card-content white-text">
+                <span class="card-title"> Category: {{ api.0.Category.Name }} </span>
+                <p>
+                <span>{{ api.0.ReportingArea }} </span> Air Quality: {{ api.0.AQI }}
+                </p>
 
-                        <hr>
-                        <p>
-                            {{ category_description }}
-                        </p>
-                    </div>
-                </div>
+                <hr />
+                <p>{{ category_description }}</p>
             </div>
+            </div>
+        </div>
         </div>
 
     {% endif %}
-
 {% endif %}
 
 {% endblock %}
